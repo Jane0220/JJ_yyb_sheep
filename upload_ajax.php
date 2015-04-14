@@ -23,4 +23,5 @@ if($result){
 	$data['code'] = 0;
 	$data['data'] = '';
 }
+echo json_encode($data);
 ?>

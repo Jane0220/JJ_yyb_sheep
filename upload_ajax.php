@@ -8,7 +8,7 @@ if( isset($_POST['folder_name']) && $_POST['folder_name'] ){
 	echo json_encode($data);
 	exit;
 }
-$file = $_FILES['file'];
+$file = $_FILES['file']['tmp_name'];
 $file_name = $_FILES['file']['name'];
 $file_folder = "images/".$folder_name;
 if(!file_exists($file_folder)){

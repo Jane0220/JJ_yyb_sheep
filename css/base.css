@@ -1,0 +1,72 @@
+.blockUI{
+	width:100%;
+	height:100%;
+	margin:0;
+	padding:0;
+	position:fixed;
+	left:0;
+	top:0;
+	z-index:1111;
+}
+.blockUI *{
+	margin:0;
+	padding:0;
+}
+.overlay{
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0;
+	left:0;
+}
+.overlay_black{
+	opacity:0.5;
+	filter:alpha(opacity=50);
+	background-color:#000;
+}
+.overlay_white{
+	opacity:0.7;
+	filter:alpha(opacity=70);
+	background-color:#fff;
+}
+.content{
+	left:50%;
+	top:50%;
+	position:absolute;
+	border-radius:5px;
+}
+.loading_blockUI .content{
+	text-align:center;
+	width:300px;
+	height:50px;
+	line-height:50px;
+	margin:-25px 0 0 -150px;
+	color:#fff;
+	background-color:#000;
+}
+.alert_blockUI .content{
+	text-align:center;
+	width:400px;
+	height:140px;
+	line-height:140px;
+	margin:-70px 0 0 -200px;
+	border:1px solid #ddd;
+	color:#000;
+	background-color:#fff;
+}
+.confirm_blockUI .content{
+	text-align:center;
+	width:400px;
+	height:200px;
+	margin:-100px 0 0 -200px;
+	border:1px solid #ddd;
+	color:#000;
+	background-color:#fff;
+}
+.confirm_blockUI .content_inner{
+	height:140px;
+	line-height:140px;
+}
+.confirm_blockUI .btn_box a{
+	padding: 6px 12px;
+}

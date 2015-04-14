@@ -70,6 +70,7 @@
 				</li>
 			</ul>
 			<div class="btn_box">
+				<a class="btn btn-default" href="upload.php" role="button">回到传文件</a>
 				<a class="btn btn-default" href="javascript:;" role="button" id="J_preview_btn">查看</a>
 				<button class="btn btn-primary" type="submit" id="J_submit_btn">提交</button>
 			</div>

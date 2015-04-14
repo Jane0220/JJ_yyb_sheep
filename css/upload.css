@@ -1,0 +1,66 @@
+.uploadarea{
+	max-width:1000px;
+	margin:72px auto 0;
+}
+.folder_wrap{
+	float:left;
+	width:200px;
+	margin:20px 20px 20px 0;
+}
+.folder_wrap ul{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+.folder_wrap ul li{
+	border-top: 1px solid #ddd;
+	word-wrap:break-word;
+	padding:10px;
+}
+.folder_wrap ul :nth-child(odd){
+	background-color: #f9f9f9;
+}
+.upload_wrap{
+	float:left;
+	margin:20px 0;
+	max-width:770px;
+}
+.upload_wrap ul{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+.upload_wrap ul li{
+	margin-bottom:10px;
+}
+.upload_box{
+	width:100px;
+	height:36px;
+	margin:10px 0;
+	position:relative;
+}
+.upload_box *{
+	width:100px;
+	height:36px;
+	position:absolute;
+}
+.upload_box input{
+	opacity:0;
+	filter:alpha(opacity=0);
+}
+.thumb_box img{
+	height:160px;
+	margin:0 10px 10px 0;
+}
+.thumb_box,
+.thumb_url{
+	margin-bottom:20px;
+}
+.btn_box a{
+	margin-right:20px;
+}
+
+
+.hide{
+	display:none;
+}

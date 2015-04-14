@@ -15,6 +15,7 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 
 	<!-- Custom styles for this template -->
+	<link href="css/base.css" rel="stylesheet">
 	<link href="css/signin.css" rel="stylesheet">
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -42,5 +43,8 @@
 			<button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
 		</form>
 	</div>
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/core.js"></script>
 </body>
 </html>

@@ -52,5 +52,8 @@ function showConfirm(text){
 function hideConfirm(){
 	$('#J_confrim_wrap').hide();
 }
-
-$('#J_confrim_wrap').
+$('#J_confrim_wrap').undelegate().delegate({
+	'click':function(){
+		hideConfirm();
+	}
+});

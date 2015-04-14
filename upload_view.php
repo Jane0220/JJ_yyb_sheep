@@ -27,40 +27,19 @@
 
 <body>
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="#">应用宝推送后台</a>
-		</div>
-		<div id="navbar" class="navbar-collapse collapse">
-			<ul class="nav navbar-nav navbar-right">
-<!--				<li><a href="#">Dashboard</a></li>
-				<li><a href="#">Settings</a></li>
-				<li><a href="#">Profile</a></li>
-				<li><a href="#">Help</a></li>-->
-				<li><a href="#">登出</a></li>
-			</ul>
-		</div>
-	</div>
-</nav>
+<?php include_once('common_header'); ?>
 
 <div class="uploadarea">
 	<a class="btn btn-default" href="push.php" role="button">直接去推送</a>
 	<div class="clearfix">
 		<div class="folder_wrap">
 			<p>已存在的文件夹</p>
-			<ul>
-				<li>11111111111111111111111111111111111111</li>
+			<ul id="J_folder_list">
+<!--				<li>11111111111111111111111111111111111111</li>
 				<li>2</li>
 				<li>3</li>
 				<li>4</li>
-				<li>5</li>
+				<li>5</li>-->
 			</ul>
 		</div>
 		<div class="upload_wrap">
@@ -119,8 +98,35 @@
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="http://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/core.js"></script>
 <script>
-
+function get_folder_list(){
+	showLoading('正在加载中，请稍候...');
+	$.ajax({
+		type: 'POST',
+		url: 'list_exist_folder.php',
+		dataType: "json",
+		success:function(data){
+			hideLoading();
+			if(data.code == 1 || data.code == '1'){
+				for(var data_i in data.data){
+					$('#J_folder_list').append('<li>'+data.data[data_i]+'</li>');
+				}
+			}else{
+				showAlert('获取现有文件夹列表失败，请重试！');
+				setTimeout(hideAlert,2000);
+			}
+		},
+		error:function(){
+			hideLoading();
+			showAlert('获取现有文件夹列表失败，请重试！');
+			setTimeout(hideAlert,2000);
+		}
+	});
+}
+$(document).ready(function(){
+	get_folder_list();
+});
 </script>
 </body>
 </html>

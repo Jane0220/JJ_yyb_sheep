@@ -15,6 +15,7 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 
 	<!-- Custom styles for this template -->
+	<link href="css/base.css" rel="stylesheet">
 	<link href="css/preview.css" rel="stylesheet">
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -26,28 +27,7 @@
 
 <body>
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="#">应用宝推送后台</a>
-		</div>
-		<div id="navbar" class="navbar-collapse collapse">
-			<ul class="nav navbar-nav navbar-right">
-<!--				<li><a href="#">Dashboard</a></li>
-				<li><a href="#">Settings</a></li>
-				<li><a href="#">Profile</a></li>
-				<li><a href="#">Help</a></li>-->
-				<li><a href="#">登出</a></li>
-			</ul>
-		</div>
-	</div>
-</nav>
+<?php include_once('common_header'); ?>
 
 <div class="myarea clearfix">
 	<div class="preview_area" id="J_preview_area">
@@ -82,6 +62,7 @@
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="http://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/core.js"></script>
 <script>
 $('#J_preview_btn').click(function(){
 	$('#J_preview_area').html($('#J_content_input').val());

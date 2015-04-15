@@ -67,11 +67,6 @@
 $('#J_preview_btn').click(function(){
 	$('#J_preview_area').html($('#J_content_input').val());
 });
-$('#J_submit_btn').click(function(){
-	if($.trim($('#J_title_input').val()).length > 0 && $.trim($('#J_author_input').val()).length > 0 && $.trim($('#J_content_input').val()).length > 0){
-		// todo submit
-	}
-});
 </script>
 </body>
 </html>

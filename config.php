@@ -11,7 +11,7 @@ switch($config_flag){
 				'database'	=> 'yyb_backend'
 			),
 			'memcache_path'		=> "tcp://127.0.0.1:11211",
-			'session_domain'	=> ".ppick.com"
+			'session_domain'	=> ".pppick.com"
 		);
 		break;
 	case 1:

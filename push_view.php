@@ -38,15 +38,15 @@
 			<ul>
 				<li>
 					<p>标题</p>
-					<input type="text" class="form-control" id="J_title_input" value="" autocomplete="off" required autofocus />
+					<input type="text" name="title" class="form-control" id="J_title_input" value="" autocomplete="off" required autofocus />
 				</li>
 				<li>
 					<p>作者</p>
-					<input type="text" class="form-control" id="J_author_input" value="大象册" required />
+					<input type="text" name="author" class="form-control" id="J_author_input" value="大象册" required />
 				</li>
 				<li>
 					<p>内容</p>
-					<textarea class="form-control" id="J_content_input" autocomplete="off" required></textarea>
+					<textarea class="form-control" name="content" id="J_content_input" autocomplete="off" required></textarea>
 				</li>
 			</ul>
 			<div class="btn_box">

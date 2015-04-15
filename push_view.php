@@ -34,7 +34,7 @@
 	</div>
 	
 	<div class="content_area">
-		<form class="form-post" action="demo.php" type="POST">
+		<form class="form-post" action="demo.php" method="POST">
 			<ul>
 				<li>
 					<p>标题</p>

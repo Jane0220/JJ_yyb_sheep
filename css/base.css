@@ -70,3 +70,7 @@
 .confirm_blockUI .btn_box a{
 	padding: 6px 12px;
 }
+
+.my_hide{
+	display:none;
+}

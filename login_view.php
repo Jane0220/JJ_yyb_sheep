@@ -29,10 +29,10 @@
 	<div class="container">
 		<form class="form-signin">
 			<h2 class="form-signin-heading">请登录</h2>
-			<label for="inputName" class="sr-only">用户名</label>
-			<input type="text" id="inputName" class="form-control" placeholder="用户名" required autofocus>
-			<label for="inputPassword" class="sr-only">密码</label>
-			<input type="password" id="inputPassword" class="form-control" placeholder="密码" required>
+			<label for="J_name_input" class="sr-only">用户名</label>
+			<input type="text" id="J_name_input" class="form-control" placeholder="用户名" required autofocus>
+			<label for="J_passwd_input" class="sr-only">密码</label>
+			<input type="password" id="J_passwd_input" class="form-control" placeholder="密码" required>
 			<!--
 			<div class="checkbox">
 				<label>
@@ -40,11 +40,44 @@
 				</label>
 			</div>
 			-->
-			<button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+			<a class="btn btn-lg btn-primary btn-block" href="javascript:;" role="button" id="J_login_btn">登录</a>
 		</form>
 	</div>
 <script src="http://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/core.js"></script>
+<script>
+$('#J_login_btn').click(function(){
+	if($('#J_name_input').val().length == 0){
+		showAlert('请填写用户名！');
+		setTimeout(hideAlert,2000);
+	}else if($('#J_passwd_input').val().length == 0){
+		showAlert('请填写密码！');
+		setTimeout(hideAlert,2000);
+	}else{
+		showLoading('正在登录，请稍候...');
+		$.ajax({
+			type: 'POST',
+			url: 'login_ajax.php',
+			data: 'user_name='+$('#J_name_input').val() + '&password='+$('#J_passwd_input').val(),
+			dataType: "json",
+			success:function(data){
+				hideLoading();
+				if(data.code == 1 || data.code == '1'){
+					window.location = 'upload.php';
+				}else{
+					showAlert('用户名或密码错误，请重试！');
+					setTimeout(hideAlert,2000);
+				}
+			},
+			error:function(){
+				hideLoading();
+				showAlert('系统故障，请联系开发人员！');
+				setTimeout(hideAlert,2000);
+			}
+		});
+	}
+});
+</script>
 </body>
 </html>

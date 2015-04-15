@@ -47,7 +47,7 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/core.js"></script>
 <script>
-$('#J_login_btn').click(function(){
+function login(){
 	if($('#J_name_input').val().length == 0){
 		showAlert('请填写用户名！');
 		setTimeout(hideAlert,2000);
@@ -76,6 +76,16 @@ $('#J_login_btn').click(function(){
 				setTimeout(hideAlert,2000);
 			}
 		});
+	}
+}
+$('#J_login_btn').click(function(){
+	login();
+});
+$('#J_name_input,#J_passwd_input').bind({
+	'keydown' : function(e){
+		if(e.keyCode == 13){
+			login();
+		}
 	}
 });
 </script>

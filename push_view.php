@@ -27,14 +27,14 @@
 
 <body>
 
-<?php include_once('common_header'); ?>
+<?php include_once('common_header.php'); ?>
 
 <div class="myarea clearfix">
 	<div class="preview_area" id="J_preview_area">
 	</div>
 	
 	<div class="content_area">
-		<form class="form-post">
+		<form class="form-post" action="demo.php" type="POST">
 			<ul>
 				<li>
 					<p>标题</p>

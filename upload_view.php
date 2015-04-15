@@ -98,6 +98,7 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/core.js"></script>
 <script>
+var img_domain = 'http://game.ppickup.com/yyb/';
 function get_folder_list(){
 	showLoading('正在加载中，请稍候...');
 	$('#J_folder_list').html('');
@@ -179,7 +180,7 @@ function upload_images(){
 						if(json.code == 1){
 							files_num++;
 							result_thumb_url.push(json.data);
-							result_thumb_images.push('<img src="images/'+json.data+'" />');
+							result_thumb_images.push('<img src="'+img_domain+'images/'+json.data+'" />');
 						}				
 					}else{
 						showAlert('未知故障，请联系开发人员！');

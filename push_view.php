@@ -45,6 +45,10 @@
 					<input type="text" name="author" class="form-control" id="J_author_input" value="大象册" required />
 				</li>
 				<li>
+					<p>封面</p>
+					<input type="text" name="thumb" class="form-control" id="J_thumb_input" value="" autocomplete="off" required autofocus />
+				</li>
+				<li>
 					<p>内容</p>
 					<textarea class="form-control" name="content" id="J_content_input" autocomplete="off" required></textarea>
 				</li>

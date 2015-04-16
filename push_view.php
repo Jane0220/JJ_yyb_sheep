@@ -44,9 +44,10 @@
 					<p>作者</p>
 					<input type="text" name="author" class="form-control" id="J_author_input" value="大象册" required />
 				</li>
-				<li>
+				<li class="thumb_li">
 					<p>封面</p>
 					<input type="text" name="thumb" class="form-control" id="J_thumb_input" value="" autocomplete="off" required autofocus />
+					<img class="thumb" id="J_thumb_img" src="" />
 				</li>
 				<li>
 					<p>内容</p>
@@ -69,7 +70,11 @@
 <script src="js/core.js"></script>
 <script>
 $('#J_preview_btn').click(function(){
+	if($('#J_thumb_input').val().length > 0){
+		$('#J_thumb_img').attr('src','http://game.ppickup.com/smallgame/web/yyb/images/'+$('#J_thumb_input').val()).css('display','block');
+	}
 	$('#J_preview_area').html($('#J_content_input').val());
+	
 });
 </script>
 </body>

@@ -1,5 +1,5 @@
 <?php
-$config_flag = 0;
+$config_flag = 1;
 switch($config_flag){
 	case 0:
 		$config = array(
@@ -24,7 +24,7 @@ switch($config_flag){
 				'database'	=> 'yyb_backend'
 			),
 			'memcache_path'		=> "tcp://10.249.161.174:11211",
-			'session_domain'	=> ".ppickup.com"
+			'session_domain'	=> "xxx.xx"
 		);
 		break;
 }

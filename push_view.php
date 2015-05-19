@@ -59,6 +59,10 @@
 						<input type="text" class="form-control" id="J_thumb_input" value="" autocomplete="off" required autofocus />
 					</li>
 					<li>
+						<p>原文链接</p>
+						<input type="text" class="form-control" id="J_url_input" value="" autocomplete="off" required autofocus />
+					</li>
+					<li>
 						<p>内容</p>
 						<textarea class="form-control" id="J_content_input" autocomplete="off" required></textarea>
 					</li>
@@ -123,6 +127,7 @@ var thumb_domain = 'images/';
 function reset(){
 	$('#J_title_input').val('');
 	$('#J_thumb_input').val('');
+	$('#J_url_input').val('');
 	$('#J_content_input').val('');
 	$('#J_thumb_show').attr('src','');
 	$('#J_preview_area').html('');
@@ -137,6 +142,9 @@ $('#J_preview_btn').click(function(){
 		setTimeout(hideAlert,2000);
 	}else if($.trim($('#J_thumb_input').val()).length == 0){
 		showAlert('请填写封面地址！');
+		setTimeout(hideAlert,2000);
+	}else if($.trim($('#J_url_input').val()).length == 0){
+		showAlert('请填写原文链接！');
 		setTimeout(hideAlert,2000);
 	}else if($.trim($('#J_content_input').val()).length == 0){
 		showAlert('请填写内容！');
@@ -157,7 +165,7 @@ $('#J_push_btn').click(function(){
 	$.ajax({
 		type: 'POST',
 		url: 'demo.php',
-		data: {title:$.trim($('#J_title_input').val()),thumb:$.trim($('#J_thumb_input').val()),author:$.trim($('#J_author_input').val()),content:$.trim($('#J_content_input').val())},
+		data: {title:$.trim($('#J_title_input').val()),thumb:$.trim($('#J_thumb_input').val()),author:$.trim($('#J_author_input').val()),articleUrl:$.trim($('#J_url_input').val()),content:$.trim($('#J_content_input').val())},
 		dataType: "html",
 		success:function(data){
 			hideLoading();

@@ -51,7 +51,7 @@ class YYBE_DEMO {
 // 配置
 $config = array('providerId' => 10008, // 平台分配
                 'secret' => 'xV7@xF8%eD4*eS0@eG1(yX1)oD5(tT7(', // 平台分配
-                'isDebug' => 1,  // 是否处于调试模式，正式推送时可置为0
+                'isDebug' => 0,  // 是否处于调试模式，正式推送时可置为0
                );
 //$config['isDebug'] = 0;
 $demo = new YYBE_Demo($config['providerId'], $config['secret'], $config['isDebug']);
@@ -68,12 +68,14 @@ $content = $_POST['content'];
 $title = $_POST['title'];
 $author = $_POST['author'];		 
 $thumb = $_POST['thumb'];
-$thumbUrl = "http://game.ppickup.com/smallgame/web/yyb/images/".$thumb;	 
+$articleUrl = $_POST['articleUrl'];
+$thumbUrl = "http://game.ppickup.com/yyb/images/".$thumb;	 
 $data = array(
               'title' => $title,
               'type' => 3, // 1: 段子 2: 动漫 3: 逗比们
               'content' => $content,
-              'articleUrl' => 'https://www.daxiangce123.com/',
+              //'articleUrl' => 'https://www.daxiangce123.com/',
+              'articleUrl' => $articleUrl,
               'thumbUrl' => $thumbUrl,
 			  'author' => $author
              );

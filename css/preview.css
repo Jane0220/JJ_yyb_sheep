@@ -69,7 +69,6 @@
 }
 .content_area li{
 	margin-bottom:20px;
-	position:relative;
 }
 .content_area textarea{
 	resize:none;
@@ -80,18 +79,4 @@
 }
 .content_area .btn_box a{
 	margin:0 10px;
-}
-
-.thumb{
-	position:absolute;
-	right:0;
-	top:0;
-	display:none;
-	width:200px;
-	height:200px;
-	z-index:100;
-}
-.thumb_li{
-	padding-right:210px;
-	height:200px;
 }

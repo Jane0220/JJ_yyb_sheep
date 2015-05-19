@@ -46,7 +46,9 @@
 			<div class="section section1" id="J_upload_step1">
 				<h1>Step1</h1>
 				<p>选择文件夹</p>
-				<ul id="J_folder_list">
+				<ul id="J_folder_all_list" class="myhide">
+				</ul>
+				<ul id="J_folder_list" class="myhide">
 				</ul>
 				<p>或新建文件夹</p>
 				<div>
@@ -125,9 +127,26 @@ function get_folder_list(){
 		success:function(data){
 			hideLoading();
 			if(data.code == 1 || data.code == '1'){
+				var data_list = data.data;
+				var list_str = '';
+				for(var start_i = data_list.length - 1; start_i >= 0 ; start_i--){
+					$('#J_folder_all_list').prepend('<li><a href="javascript:;" class="single">'+data_list[start_i]+'</a></li>');
+					if(data_list.length > 5 && start_i >= data_list.length - 5){
+						list_str = '<li><a href="javascript:;" class="single">'+data_list[start_i]+'</a></li>' + list_str;
+					}
+				}
+				if(data_list.length > 5){
+					list_str = '<li><a href="javascript:;" class="view_all">查看全部</a></li>' + list_str;
+					$('#J_folder_list').append(list_str);
+					$('#J_folder_list').show();
+				}else{
+					$('#J_folder_all_list').show();
+				}
+				/*
 				for(var data_i in data.data){
 					$('#J_folder_list').append('<li><a href="javascript:;">'+data.data[data_i]+'</a></li>');
 				}
+				*/
 			}else{
 				showAlert('获取现有文件夹列表失败，请重试！');
 				setTimeout(hideAlert,2000);
@@ -140,7 +159,33 @@ function get_folder_list(){
 		}
 	});
 }
+/*
+$('#J_folder_list').off().on('click','.single',function(){
+	global.folder = $(this).text();
+	$('#J_selected_folder').text(global.folder);
+	$('#J_upload_step1').hide();
+	$('#J_upload_step2').show();
+	console.log(222);
+});
+$('#J_folder_list').off().on('click','.view_all',function(){
+	$('#J_folder_list').hide();
+	$('#J_folder_all_list').show();
+	console.log(111);
+});
+*/
 $('#J_folder_list').off().on('click','a',function(){
+	var _this = $(this);
+	if(_this.hasClass("view_all")){
+		$('#J_folder_list').hide();
+		$('#J_folder_all_list').show();
+	}else{
+		global.folder = _this.text();
+		$('#J_selected_folder').text(global.folder);
+		$('#J_upload_step1').hide();
+		$('#J_upload_step2').show();
+	}
+});
+$('#J_folder_all_list').off().on('click','.single',function(){
 	global.folder = $(this).text();
 	$('#J_selected_folder').text(global.folder);
 	$('#J_upload_step1').hide();
